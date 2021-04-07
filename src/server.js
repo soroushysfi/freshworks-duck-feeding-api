@@ -1,6 +1,10 @@
 const express = require('express')
+require('./db/mongoose')
+
 
 const app = express()
+
+
 
 const port = process.env.PORT || 3000
 
@@ -12,5 +16,5 @@ app.use('/api', DuckFeedingRouter);
 
 
 app.listen(port, () => {
-    console.log("server is listening on port 3000")
+    console.log(`server is listening on port ${port}`)
 })

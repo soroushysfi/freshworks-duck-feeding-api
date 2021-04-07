@@ -1,22 +1,30 @@
 const express = require('express')
 
+const DuckFeeding = require('../models/duck-feeding-model')
+
 const DuckFeedingRouter = express.Router()
 
 DuckFeedingRouter.route('/duck-feeding')
 
-.get(function (req, res, next) {
+.get( async function (req, res, next) {
     try {
-        return res.send('Received a GET HTTP method');
+        let { limit } = req.query
+        limit  = parseInt(limit)
+        const duckFeedingInfos = await DuckFeeding.find({}).limit(limit)
+        res.send(duckFeedingInfos);
     } catch (e) {
-        console.log(e);
+        res.status(500).send(e);
     }
   })
 
-.post(function (req, res, next) {
+.post(async function (req, res, next) {
     try {
-        return res.send('Received a POST HTTP method');
+        const duckFeedingInfo = new DuckFeeding(req.body)
+        const result = await duckFeedingInfo.save()
+
+        return res.status(201).send(result);
     } catch (e) {
-        console.log(e);
+        res.status(500).send(e);
     }
   })
 
