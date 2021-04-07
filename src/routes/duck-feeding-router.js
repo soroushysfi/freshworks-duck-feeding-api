@@ -6,10 +6,10 @@ const DuckFeedingRouter = express.Router()
 
 DuckFeedingRouter.route('/duck-feeding')
 
-.get( async function (req, res, next) {
+.get( async (req, res, next) => {
+    let { limit } = req.query
+    limit  = parseInt(limit)
     try {
-        let { limit } = req.query
-        limit  = parseInt(limit)
         const duckFeedingInfos = await DuckFeeding.find({}).limit(limit)
         res.send(duckFeedingInfos);
     } catch (e) {
@@ -17,7 +17,7 @@ DuckFeedingRouter.route('/duck-feeding')
     }
   })
 
-.post(async function (req, res, next) {
+.post(async (req, res, next) => {
     try {
         const duckFeedingInfo = new DuckFeeding(req.body)
         const result = await duckFeedingInfo.save()
