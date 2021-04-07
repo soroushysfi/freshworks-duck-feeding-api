@@ -11,6 +11,11 @@ const DuckFeeding = mongoose.model('DuckFeeding', {
         trim: true,
         required: true
     },
+    foodKind: {
+        type: String,
+        trim: true,
+        required: true
+    },
     duckCount: {
         type: Number,
         required: true,
