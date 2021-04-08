@@ -10,7 +10,7 @@ DuckFeedingRouter.route('/duck-feeding')
     let { limit } = req.query
     limit  = parseInt(limit)
     try {
-        const duckFeedingInfos = await DuckFeeding.find({}).limit(limit)
+        const duckFeedingInfos = await DuckFeeding.find({}).sort({'feedingTime': -1}).limit(limit)
         res.send(duckFeedingInfos);
     } catch (e) {
         res.status(500).send(e);
