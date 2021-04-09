@@ -11,9 +11,9 @@ After the above command to run the application in development, you can run:
 
 ### `npm run dev`
 
-The application listen on [http://localhost:3000](http://localhost:3000).
+The application will listen on [http://localhost:3000](http://localhost:3000).
 
-Since this project is using Nodemon, it will reload if any changes made
+Since this project is using Nodemon, it will reload if any changes
 are made to the files in development.
 
 ### `npm test`
@@ -22,13 +22,13 @@ Launches the test runner in the interactive watch mode.
 
 
 
-### Deployed Version
+## Deployed Version
 
 This app has been deployed on Heroku free servers.
 
 You can find the live app [here](https://freshworks-duck-feeding-api.herokuapp.com/api/duck-feeding).
 
-### Frontend for this Project
+## Frontend for this Project
 
 Web application for this project is provided by another [repository](https://github.com/soroushysfi/freshworks-duck-feeding-app).
 
