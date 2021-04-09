@@ -1,6 +1,8 @@
 
 const mongoose = require('mongoose')
 
+// duck feeding model to save data
+// submitted from the form to the database
 const DuckFeeding = mongoose.model('DuckFeeding', {
     feedingTime: {
         type: Date,
