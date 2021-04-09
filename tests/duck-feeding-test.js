@@ -5,6 +5,7 @@ const DuckFeeding = require('../src/models/duck-feeding-model')
 const duckFeedingInfo = {
     feedingTime: "2018-12-31",
     foodType: "test",
+    foodKind: "test",
     duckCount: 10,
     foodAmount: 5,
     reOccurring: true 
